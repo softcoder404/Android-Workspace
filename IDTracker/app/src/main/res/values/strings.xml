@@ -3,4 +3,5 @@
     <string name="hint_text">Enter your ID Number</string>
     <string name="btn_title">CHECK ID</string>
     <string name="image_desc">SA card</string>
+    <string name="tv_text">D.O.B : 12/04/20</string>
 </resources>
