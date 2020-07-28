@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.widget.Toast.makeText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,12 +43,16 @@ public class MainActivity extends AppCompatActivity {
        btnTemp.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-            double tempVal = Integer.parseInt(etTemp.getText().toString()) * 1.0;
-            double calResult = ( tempVal / 3.0) + 4.0;
-            String calRes = String.format("%.2f",calResult);
-            String resText = "The approximate temperature outside is " + calRes + " degrees Celsius.";
-            tvRes.setText(resText);
-            tvRes.setVisibility(View.VISIBLE);
+            if(etTemp.getText().toString().isEmpty()){
+                Toast.makeText(MainActivity.this,"Please enter the number of chirps the cricket makes",Toast.LENGTH_LONG).show();
+            }else{
+                double tempVal = Integer.parseInt(etTemp.getText().toString().trim()) * 1.0;
+                double calResult = ( tempVal / 3.0) + 4.0;
+                String calRes = String.format("%.2f",calResult);
+                String resText = "The approximate temperature outside is " + calRes + " degrees Celsius.";
+                tvRes.setText(resText);
+                tvRes.setVisibility(View.VISIBLE);
+            }
            }
        });
     }
