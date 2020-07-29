@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        boolean onDebug = true;
         //bind view component with defined variables
         btnSubmit = findViewById(R.id.btnSub);
         tvResult = findViewById(R.id.tvRes);
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         etNumber.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if((keyEvent.getNumber() > 47 && keyEvent.getNumber() < 58 && etNumber.getText().toString().trim().length() < 13) || i == 67 ) return false;
+                if ((keyEvent.getNumber() > 47 && keyEvent.getNumber() < 58 && etNumber.getText().toString().trim().length() < 13) || i == 67)
+                    return false;
                 else return true;
             }
         });
@@ -41,19 +42,19 @@ public class MainActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(etNumber.getText().toString().trim().isEmpty()){
-                    Toast.makeText(MainActivity.this,"Please enter your ID number",Toast.LENGTH_SHORT).show();
-                }else{
+                if (etNumber.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter your ID number", Toast.LENGTH_SHORT).show();
+                } else {
                     //check if number is not valid
-                    if(etNumber.getText().toString().trim().length() != 13){
-                        Toast.makeText(MainActivity.this,"Invalid ID, Please enter 13 digits number",Toast.LENGTH_LONG).show();
-                    }else{
-                    String dob = etNumber.getText().toString().trim().substring(0,6);
-                    String nDob = "";
-                    //reformat dob
-                        for(int i = 0; i < dob.length(); i+=1){
+                    if (etNumber.getText().toString().trim().length() != 13) {
+                        Toast.makeText(MainActivity.this, "Invalid ID, Please enter 13 digits number", Toast.LENGTH_LONG).show();
+                    } else {
+                        String dob = etNumber.getText().toString().trim().substring(0, 6);
+                        String nDob = "";
+                        //reformat dob
+                        for (int i = 0; i < dob.length(); i += 1) {
                             nDob += dob.charAt(i);
-                            if(i == 1 || i == 3) nDob += '-';
+                            if (i == 1 || i == 3) nDob += '-';
                         }
 
                         String gender = Integer.parseInt(Character.toString(etNumber.getText().toString().charAt(6))) >= 5 ? "Male" : "Female";
@@ -65,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
                         tvResult.setVisibility(View.VISIBLE);
                     }
                 }
-          }
+            }
         });
+
     }
 }
