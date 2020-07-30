@@ -1,9 +1,8 @@
 package com.example.explicitintentapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,14 +15,14 @@ public class MainActivity extends AppCompatActivity {
     Button btnActivity2, btnActivity3;
     EditText editText;
     TextView tvRes;
-
+    final int REQUESTCODE = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnActivity2 = findViewById(R.id.btnAct2);
         btnActivity3 = findViewById(R.id.btnAct3);
-        editText = findViewById(R.id.etName);
+        editText = findViewById(R.id.etText3);
         tvRes = findViewById(R.id.tvRes);
 
         btnActivity2.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +51,19 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     Intent intent = new Intent(MainActivity.this,
                             com.example.explicitintentapp.MainActivity3.class);
-                    intent.putExtra("fullName",editText.getText().toString().trim());
-                    startActivity(intent);
+                    startActivityForResult(intent,REQUESTCODE);
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUESTCODE){
+            if(resultCode == RESULT_OK){
+                tvRes.setText(data.getDataString());
+            }
+        }
     }
 }
