@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Explicit Intent App</string>
     <string name="enter_your_name_please">Enter Your Name Please</string>
-    <string name="goto_activitiy_2">Goto Activitiy 2</string>
+    <string name="goto_activitiy_2">Goto Implicit Intent</string>
     <string name="goto_activitiy_3">Goto Activitiy 3</string>
     <string name="return_data_will_be_display_here">return data will be display here</string>
     <string name="enter_your_surname">Enter Your Surname</string>
@@ -9,4 +9,9 @@
     <string name="enter_a_text">Enter A Text</string>
     <string name="submit">SUBMIT</string>
     <string name="cancel">Cancel</string>
+    <string name="call">call</string>
+    <string name="call_friend">Call Friend</string>
+    <string name="implicit_intent_samples">Implicit Intent Samples</string>
+    <string name="open_map">Open Map</string>
+    <string name="open_web">Open Web</string>
 </resources>
