@@ -20,7 +20,12 @@ public class FormActivity extends AppCompatActivity {
         imgFair = findViewById(R.id.imgFair);
         imgGood = findViewById(R.id.imgGood);
         imgSad = findViewById(R.id.imgSad);
-         imgFair.setOnClickListener(new View.OnClickListener() {
+        etNumber = findViewById(R.id.etNumber);
+        etName = findViewById(R.id.etName);
+        etLocation = findViewById(R.id.etLoc);
+        etWebsite = findViewById(R.id.etWeb);
+
+        imgFair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -38,7 +43,7 @@ public class FormActivity extends AppCompatActivity {
                     intent.putExtra("website",website);
                     intent.putExtra("location",location);
                     setResult(RESULT_OK,intent);
-                    finishActivity(3);
+                    FormActivity.this.finish();
                 }
             }
         });
