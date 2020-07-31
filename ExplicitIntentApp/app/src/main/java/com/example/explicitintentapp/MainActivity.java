@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnActivity3 = findViewById(R.id.btnAct3);
         editText = findViewById(R.id.etText3);
         tvRes = findViewById(R.id.tvRes);
-
+        tvRes.setVisibility(View.GONE);
         btnActivity2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,8 +61,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUESTCODE){
-            if(resultCode == RESULT_OK){
-                tvRes.setText(data.getDataString());
+
+            if (resultCode == RESULT_OK){
+                tvRes.setText(data.getStringExtra("returnData"));
+                tvRes.setVisibility(View.VISIBLE);
+            }
+            else if(resultCode == RESULT_CANCELED){
+                tvRes.setText(data.getStringExtra("returnData"));
+                tvRes.setVisibility(View.VISIBLE);
             }
         }
     }
