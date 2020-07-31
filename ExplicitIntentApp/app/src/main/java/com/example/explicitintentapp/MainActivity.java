@@ -67,8 +67,13 @@ public class MainActivity extends AppCompatActivity {
                 tvRes.setVisibility(View.VISIBLE);
             }
             else if(resultCode == RESULT_CANCELED){
-                tvRes.setText(data.getStringExtra("returnData"));
-                tvRes.setVisibility(View.VISIBLE);
+                if(data == null){
+                    tvRes.setText("Empty Data Returned !");
+                    tvRes.setVisibility(View.VISIBLE);
+                }else{
+                    tvRes.setText(data.getStringExtra("returnData"));
+                    tvRes.setVisibility(View.VISIBLE);
+                }
             }
         }
     }
