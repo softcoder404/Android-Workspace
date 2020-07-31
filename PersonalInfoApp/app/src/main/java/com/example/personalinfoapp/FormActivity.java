@@ -39,6 +39,7 @@ public class FormActivity extends AppCompatActivity {
                 }else{
                     Intent intent = new Intent();
                     intent.putExtra("name",name);
+                    intent.putExtra("mood","fair");
                     intent.putExtra("phone",phone);
                     intent.putExtra("website",website);
                     intent.putExtra("location",location);
