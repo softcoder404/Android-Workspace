@@ -12,10 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button btnCreate;
+    TextView tvTtitle;
     ImageView imgCall, imgWeb, imgLocation;
     LinearLayout hiddenLayout;
     final int REQUESTCODE = 1;
@@ -24,12 +26,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //binding view id
         hiddenLayout = findViewById(R.id.hiddenLayout);
         btnCreate = findViewById(R.id.btnCreate);
         imgCall = findViewById(R.id.imgCall);
         imgWeb = findViewById(R.id.imgWeb);
         imgLocation = findViewById(R.id.imgLocation);
+        tvTtitle = findViewById(R.id.tvTitle);
         hiddenLayout.setVisibility(View.GONE);
+        //listen to on click button
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
