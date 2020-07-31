@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     Button btnCreate;
     TextView tvTtitle;
-    ImageView imgCall, imgWeb, imgLocation;
+    ImageView imgCall, imgWeb, imgLocation, imgMood;
     LinearLayout hiddenLayout;
     final int REQUESTCODE = 1;
     String phone, website, location, name, mood = "";
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //binding view id
+        imgMood = findViewById(R.id.imgMood);
         hiddenLayout = findViewById(R.id.hiddenLayout);
         btnCreate = findViewById(R.id.btnCreate);
         imgCall = findViewById(R.id.imgCall);
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         tvTtitle = findViewById(R.id.tvTitle);
         hiddenLayout.setVisibility(View.GONE);
         //listen to on click button
+
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +79,12 @@ public class MainActivity extends AppCompatActivity {
                 location = data.getStringExtra("location");
                 name = data.getStringExtra("name");
                 mood = data.getStringExtra("mood");
+                tvTtitle.setText(name);
+                if(mood == "sad") imgMood.setImageResource(R.drawable.sad);
+                else if(mood == "fair") imgMood.setImageResource(R.drawable.fair);
+                else if(mood == "good") imgMood.setImageResource(R.drawable.good);
+                else imgMood.setImageResource(R.drawable.good);
+                hiddenLayout.setVisibility(View.VISIBLE);
             }else if(requestCode == RESULT_CANCELED){
                 hiddenLayout.setVisibility(View.GONE);
             }
