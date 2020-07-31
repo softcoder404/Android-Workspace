@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Personal Info App</string>
+    <string name="contacts_app">Contacts App</string>
+    <string name="mood">mood</string>
+    <string name="icons">icon vector</string>
+    <string name="create_new_contact">CREATE NEW CONTACT</string>
+    <string name="please_enter_your_location">Please enter your location</string>
+    <string name="please_enter_your_website">Please enter your website</string>
+    <string name="please_enter_your_number">Please enter your number</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+</resources>
