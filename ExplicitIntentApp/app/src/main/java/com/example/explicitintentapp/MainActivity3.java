@@ -33,7 +33,7 @@ public class MainActivity3 extends AppCompatActivity {
                     Intent intent = new Intent();
                     intent.putExtra("returnData",editText.getText().toString().trim());
                     setResult(RESULT_OK,intent);
-                    finishActivity(3);
+                    MainActivity3.this.finish();
                 }
             }
         });
@@ -44,7 +44,7 @@ public class MainActivity3 extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra("returnData","Operation Aborted !");
                 setResult(RESULT_CANCELED,intent);
-                finishActivity(3);
+                MainActivity3.this.finish();
             }
         });
     }
