@@ -17,14 +17,16 @@ import java.util.Objects;
 
 
 public class ListFrag extends ListFragment {
-  ArrayList<String> items;
-//create an interface to link this fragment to main activity
 
+        public  ListFrag(){
+        }
+
+        String [] items;
+    //create an interface to link this fragment to main activity
     public interface ItemSelected{
         void onItemSelected(int index);
     }
-        public  ListFrag(){
-        }
+
     ItemSelected activity;
     @Override
     public void onAttach(@NonNull Context context) {
@@ -37,11 +39,7 @@ public class ListFrag extends ListFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        items = new ArrayList<>();
-        items.add("1. This is Item One");
-        items.add("2. This is Item Two");
-        items.add("3. This is Item Three");
-        items.add("4. This is Item Four");
+        items = getResources().getStringArray(R.array.pieces);
         //To place item on the listView, we need to setArrayAdapter
         setListAdapter(new ArrayAdapter<>(Objects.requireNonNull(getActivity()), android.R.layout.simple_list_item_1,items));
 
