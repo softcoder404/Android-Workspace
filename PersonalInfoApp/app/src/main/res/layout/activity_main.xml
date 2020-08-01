@@ -11,38 +11,34 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
         android:layout_marginBottom="10dp"
-        android:gravity="center_horizontal"
+        android:drawableEnd="@drawable/good"
+        android:drawableRight="@drawable/good"
+        android:drawablePadding="20dp"
+        android:fontFamily="sans-serif"
         android:text="@string/contacts_app"
         android:textColor="@color/colorPrimaryText"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold|italic" />
 
     <LinearLayout
-        android:id="@+id/hiddenLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:visibility="visible">
-
-        <ImageView
-            android:id="@+id/imgMood"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="40dp"
-            android:contentDescription="@string/mood"
-            app:srcCompat="@drawable/good" />
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imgCall"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:clickable="true"
             android:contentDescription="@string/icons"
             android:focusable="true"
@@ -50,10 +46,10 @@
 
         <ImageView
             android:id="@+id/imgWeb"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:clickable="true"
             android:contentDescription="@string/icons"
             android:focusable="true"
@@ -61,10 +57,10 @@
 
         <ImageView
             android:id="@+id/imgLocation"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:clickable="true"
             android:contentDescription="@string/icons"
             android:focusable="true"
