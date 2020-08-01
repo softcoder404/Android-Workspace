@@ -7,17 +7,7 @@
     android:background="@color/colorPrimary"
     tools:context=".ListFrag">
 
-
-    <TextView
-        android:id="@+id/tvDetail"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center_horizontal"
-        android:text="@string/item_selected_will_be_display_here"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="normal|bold" />
+        android:layout_height="match_parent" />
 </LinearLayout>

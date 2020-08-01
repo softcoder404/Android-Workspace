@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">FragmentApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="item_selected_will_be_display_here">Item selected will be display here</string>
+    <string name="description_of_items">Description of Items</string>
 </resources>
