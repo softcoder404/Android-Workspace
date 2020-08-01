@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements ListFrag.ItemSele
             manager.beginTransaction()
                     .show(manager.findFragmentById(R.id.listFrag))
                     .hide(manager.findFragmentById(R.id.detailFrag))
-                    .addToBackStack(null)
                     .commit();
         }
 
@@ -42,5 +41,14 @@ public class MainActivity extends AppCompatActivity implements ListFrag.ItemSele
     @Override
     public void onItemSelected(int index) {
         tvDetail.setText(details[index]);
+        //phone is in portrait
+        if(findViewById(R.id.layout_portrait) != null){
+            FragmentManager manager = this.getSupportFragmentManager();
+            manager.beginTransaction()
+                    .hide(manager.findFragmentById(R.id.listFrag))
+                    .show(manager.findFragmentById(R.id.detailFrag))
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 }
