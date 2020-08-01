@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+
 public class FormActivity extends AppCompatActivity {
     EditText etName, etNumber, etWebsite, etLocation;
     ImageView imgGood, imgFair, imgSad;
@@ -38,11 +40,7 @@ public class FormActivity extends AppCompatActivity {
                     Toast.makeText(FormActivity.this,"All field are required",Toast.LENGTH_SHORT).show();
                 }else{
                     Intent intent = new Intent();
-                    intent.putExtra("name",name);
-                    intent.putExtra("mood","fair");
-                    intent.putExtra("phone",phone);
-                    intent.putExtra("website",website);
-                    intent.putExtra("location",location);
+                    intent.putStringArrayListExtra("data",);
                     setResult(RESULT_OK,intent);
                     FormActivity.this.finish();
                 }
