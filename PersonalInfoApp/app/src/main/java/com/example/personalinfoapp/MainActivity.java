@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         hiddenLayout.setVisibility(View.GONE);
         tvTitle.setVisibility(View.GONE);
         //listen to on click button
-        
+
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
