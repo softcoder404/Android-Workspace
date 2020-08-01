@@ -30,17 +30,21 @@ public class FormActivity extends AppCompatActivity {
         imgFair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 name = etName.getText().toString().trim();
                 phone = etNumber.getText().toString().trim();
                 website = etWebsite.getText().toString().trim();
                 location = etLocation.getText().toString().trim();
-
                 if(name.isEmpty() || phone.isEmpty() || website.isEmpty() || location.isEmpty() ){
                     Toast.makeText(FormActivity.this,"All field are required",Toast.LENGTH_SHORT).show();
                 }else{
                     Intent intent = new Intent();
-                    intent.putStringArrayListExtra("data",);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name",name);
+                    bundle.putString("phone",phone);
+                    bundle.putString("website",website);
+                    bundle.putString("location",location);
+                    bundle.putString("mood","fair");
+                    intent.putExtras(bundle);
                     setResult(RESULT_OK,intent);
                     FormActivity.this.finish();
                 }
