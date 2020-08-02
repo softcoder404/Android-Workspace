@@ -23,7 +23,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
     }
 
     //create a public class of ViewHolder that will implement all the activities
-
     public class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView imgPref;
         private  TextView tvName, tvSurname;
