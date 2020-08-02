@@ -8,8 +8,16 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_dummy_person"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 </LinearLayout>
