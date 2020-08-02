@@ -43,7 +43,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    activity.onClickedItem(people.indexOf((PersonModel)view.getTag()));
+                    activity.onClickedItem(people.indexOf(view.getTag()));
                 }
             });
         }

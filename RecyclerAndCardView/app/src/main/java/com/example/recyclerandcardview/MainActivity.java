@@ -5,10 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PersonAdapter.ClickedItem {
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerAdapter;
     RecyclerView.LayoutManager layoutManager;
@@ -53,5 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerAdapter = new PersonAdapter(this,person);
         recyclerView.setAdapter(recyclerAdapter);
+    }
+
+    @Override
+    public void onClickedItem(int index) {
+        Log.d("Clicked detected","" + person.get(index).getName());
     }
 }
