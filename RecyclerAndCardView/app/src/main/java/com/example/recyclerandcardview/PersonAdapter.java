@@ -17,10 +17,17 @@ import java.util.ArrayList;
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder> {
 
     private ArrayList<PersonModel> people;
+    ClickedItem activity;
 
     public PersonAdapter(Context context, ArrayList<PersonModel> p) {
         this.people = p;
+        this.activity = (ClickedItem) context;
     }
+
+    public interface ClickedItem{
+        void onClickedItem(int index);
+    }
+
 
     //create a public class of ViewHolder that will implement all the activities
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -36,7 +43,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    activity.onClickedItem(people.indexOf((PersonModel)view.getTag()));
                 }
             });
         }
