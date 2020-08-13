@@ -18,7 +18,10 @@ import java.util.ArrayList;
 
 public class ListFrag extends ListFragment {
 
-
+    public interface ItemSelected{
+        void onItemSelected(int index);
+    }
+    ItemSelected activity;
 
     public ListFrag() {
         // Required empty public constructor
@@ -27,6 +30,7 @@ public class ListFrag extends ListFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        activity = (ItemSelected)context;
     }
 
     @Override
@@ -46,6 +50,6 @@ public class ListFrag extends ListFragment {
 
     @Override
     public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
-
+        activity.onItemSelected(position);
     }
 }
