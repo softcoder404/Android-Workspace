@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:background="@color/colorPrimaryLight"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:baselineAligned="false">
 
+    <fragment
+        android:id="@+id/listFrag"
+        android:name="com.example.chesshintapp.ListFrag"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_list"
+        android:layout_weight="1" />
+
+    <fragment
+        android:id="@+id/detailFrag"
+        android:name="com.example.chesshintapp.DetailFrag"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        tools:layout="@layout/fragment_detail" />
 </LinearLayout>
