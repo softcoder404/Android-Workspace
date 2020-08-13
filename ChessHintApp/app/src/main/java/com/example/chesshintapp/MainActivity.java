@@ -10,23 +10,19 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements ListFrag.ItemSelected {
     TextView tvDescription;
-    ArrayList<String> descriptions;
+    String [] descriptions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tvDescription = findViewById(R.id.tvDescription);
         tvDescription.setVisibility(View.GONE);
-        descriptions = new ArrayList<String>();
-        descriptions.add("Item one is clicked");
-        descriptions.add("Item two is clicked");
-        descriptions.add("Item three is clicked");
-        descriptions.add("Item four is clicked");
+        descriptions = getResources().getStringArray(R.array.descriptions);
     }
 
     @Override
     public void onItemSelected(int index) {
-        tvDescription.setText(descriptions.get(index));
+        tvDescription.setText(descriptions[index]);
         tvDescription.setVisibility(View.VISIBLE);
     }
 }

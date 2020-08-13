@@ -37,11 +37,9 @@ public class ListFrag extends ListFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ArrayList<String> data = new ArrayList<String>();
-        data.add("1. This is item 1");
-        data.add("2. This is item 2");
-        data.add("3. This is item 3");
-        data.add("4. This is item 4");
+        String [] data;
+
+        data = getResources().getStringArray(R.array.pieces);
 
         //to put the list items inside our list fragment will need an adapter
         //setListAdapter(new ArrayAdapter<type>(context,layout_file,data))
