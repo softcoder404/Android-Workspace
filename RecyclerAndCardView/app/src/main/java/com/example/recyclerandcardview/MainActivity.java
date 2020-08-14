@@ -42,10 +42,11 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.Cli
             @Override
             public void onClick(View view) {
                 person.add(new PersonModel("John","Doe","Bus"));
+                recyclerAdapter.notifyDataSetChanged();
             }
         });
         recyclerAdapter = new PersonAdapter(this,person);
-        recyclerAdapter.notifyDataSetChanged();
+
         recyclerView.setAdapter(recyclerAdapter);
     }
 
